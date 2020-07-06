@@ -1,0 +1,41 @@
+/* ----- Colors & Metrics ----- */
+
+$max-width: 1024px;
+
+$light: #fff;
+$dark: #222;
+
+$divider: rgba($dark, 0.08);
+
+$header-color: lighten($light, 2.4%);
+
+$experience-color: lighten($light, 5%);
+
+/* ----- Mixins ----- */
+
+@mixin shadow {
+  box-shadow: 2px 2px 8px -1px rgba(#000, 0.4);
+}
+
+/* ----- Reset Styles ----- */
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: $dark;
+  font-family: "Segoe UI", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+#app {
+  background: $light;
+  height: 100%;
+}

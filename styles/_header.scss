@@ -1,0 +1,52 @@
+header.app-header {
+  position: sticky;
+  top: 0;
+  background: $header-color;
+
+  height: 56px;
+  border-bottom: 1px solid $divider;
+  z-index: 5;
+
+  > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 100%;
+
+    > strong {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: 40px;
+      padding: 0 16px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+      background: transparent;
+      border-radius: 20px;
+      border: 1px solid $divider;
+
+      transition: background-color 150ms ease-out, box-shadow 150ms ease-out;
+
+      &:hover {
+        @include shadow;
+        background: rgba($dark, 0.025);
+      }
+
+      &:focus {
+        @include shadow;
+        background: rgba($dark, 0.05);
+      }
+    }
+  }
+}
