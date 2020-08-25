@@ -2,10 +2,6 @@
   <img src="https://www.guairaca.com.br/wp-content/themes/guairaca-mobile/images/uniguairaca.png" width="260" />
 </p>
 
-<h2 align="center">
-  🧳 Viagenzinhas
-</h2>
-
 > Projeto construído como exemplo para a palestra do projeto integrador do curso de Análise e Desenvolvimento de Sistemas, da [UniGuairaca](https://www.guairaca.com.br), no dia 02 de julho de 2020.
 
 
