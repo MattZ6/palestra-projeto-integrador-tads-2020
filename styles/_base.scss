@@ -1,21 +1,36 @@
-/* ----- Colors & Metrics ----- */
+/* ----- Colors ----- */
 
-$max-width: 1024px;
+:root {
+  --primary-color: #222222;
+  --primary-contrast-color: #FFFFFF;
 
-$light: #222;
-$dark: #fff;
+  --divider: #EEEEEE;
 
-$divider: rgba($dark, 0.08);
+  --primary-contrast-lighten-024: var(--primary-contrast-color);
 
-$header-color: lighten($light, 2.4%);
-
-$experience-color: lighten($light, 5%);
-
-/* ----- Mixins ----- */
-
-@mixin shadow {
-  box-shadow: 2px 2px 8px -1px rgba(#000, 0.4);
+  --primary-contrast-lighten-05: var(--primary-contrast-color);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #FFFFFF;
+    --primary-contrast-color: #222222;
+
+    --divider: #333333;
+
+    --primary-contrast-lighten-024: #282828;
+
+    --primary-contrast-lighten-05: #2f2f2f;
+  }
+}
+
+/* ----- Metrics ----- */
+
+$large-screens: 1920px;
+$medium-screens: 1080px;
+$small-screens: 720px;
+
+$default-padding: 16px;
 
 /* ----- Reset Styles ----- */
 
@@ -24,18 +39,47 @@ $experience-color: lighten($light, 5%);
   padding: 0;
   list-style: none;
   box-sizing: border-box;
-  outline: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  color: $dark;
   font-family: "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-contrast-color);
+  color: var(--primary-color);
+
+  height: 100%;
+}
+
+#app {
+  height: 100%;
 }
 
 button {
   cursor: pointer;
 }
 
-#app {
-  background: $light;
-  height: 100%;
+/* ----- Mixins ----- */
+
+@mixin shadow {
+  box-shadow: 2px 2px 10px -1px rgba(#000, 0.3);
+}
+
+/* ----- Util Classes ----- */
+
+.center-content {
+  max-width: $large-screens;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 0 $default-padding;
+
+  @media screen and (max-width: $large-screens) {
+    max-width: $medium-screens;
+  }
+
+  @media screen and (max-width: $medium-screens) {
+    max-width: $small-screens;
+  }
 }

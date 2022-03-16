@@ -1,10 +1,10 @@
 header.app-header {
   position: sticky;
   top: 0;
-  background: $header-color;
+  background: var(--primary-contrast-lighten-024);
 
   height: 56px;
-  border-bottom: 1px solid $divider;
+  border-bottom: 1px solid var(--divider);
   z-index: 5;
 
   > nav {
@@ -12,12 +12,9 @@ header.app-header {
     align-items: center;
     justify-content: space-between;
 
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: 0 16px;
     height: 100%;
 
-    > strong {
+    > h1 {
       font-size: 24px;
       line-height: 32px;
     }
@@ -27,25 +24,31 @@ header.app-header {
       align-items: center;
       justify-content: center;
 
-      height: 40px;
+      color: var(--primary-color);
+
+      height: 36px;
       padding: 0 16px;
       font-size: 16px;
       line-height: 24px;
       font-weight: 500;
       background: transparent;
       border-radius: 20px;
-      border: 1px solid $divider;
+      border: 1px solid var(--divider);
 
-      transition: background-color 150ms ease-out, box-shadow 150ms ease-out;
+      outline: 2px solid transparent;
+
+      transition: outline-color 150ms ease-out, background-color 150ms ease-out, box-shadow 150ms ease-out;
 
       &:hover {
         @include shadow;
-        background: rgba($dark, 0.025);
+        background: var(--primary-contrast-lighten-024);
       }
 
-      &:focus {
+      &:focus-visible {
         @include shadow;
-        background: rgba($dark, 0.05);
+        background: var(--primary-contrast-lighten-05);
+
+        outline-color: var(--primary-color);
       }
     }
   }

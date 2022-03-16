@@ -1,0 +1,22 @@
+footer.app-footer {
+  padding: $default-padding 0;
+
+  > .center-content {
+    display: flex;
+    flex-direction: column;
+
+    > small {
+      font-size: 12px;
+      line-height: 20px;
+
+      > a {
+        color: inherit;
+      }
+    }
+
+    > span {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+}
